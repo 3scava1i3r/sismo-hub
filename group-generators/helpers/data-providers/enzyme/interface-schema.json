@@ -1,0 +1,22 @@
+{
+  "name": "Enzyme",
+  "iconUrl": "",
+  "providerClassName": "EnzymeProvider",
+  "functions": [
+    {
+      "name": "Get the depositors of a vault",
+      "functionName": "getVaultDepositors",
+      "countFunctionName": "getVaultDepositorsCount",
+      "description": "Returns all the depositors of a specific vault on Enzyme. The value of each group member is the total amount they have deposited in the vault.",
+      "args": [
+        {
+          "name": "Vault ID",
+          "argName": "vaultId",
+          "type": "string",
+          "example": "0x9cfe227cab5ed97cd6781aee5f7ed6401f566355",
+          "description": "The ID of the vault"
+        }
+      ]
+    }
+  ]
+}
