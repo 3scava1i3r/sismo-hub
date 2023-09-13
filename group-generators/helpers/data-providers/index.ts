@@ -14,6 +14,8 @@ import ethereumAttestationServiceInterfaceSchema from "./eas/interface-schema.js
 import { EnsProvider } from "./ens";
 import { EnsSubdomainProvider } from "./ens-subdomain";
 import ensSubdomainInterfaceSchema from "./ens-subdomain/interface-schema.json";
+import { EnzymeProvider } from "./enzyme";
+import enzymeProviderInterfaceSchema from "./enzyme/interface-schema.json";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
 import { GalxeProvider } from "./galxe";
@@ -71,6 +73,7 @@ export const dataProviders = {
   EthereumAttestationServiceProvider,
   EnsProvider,
   EnsSubdomainProvider,
+  EnzymeProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
   GalxeProvider,
@@ -106,6 +109,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   ankrInterfaceSchema,
   ethereumAttestationServiceInterfaceSchema,
   ensSubdomainInterfaceSchema,
+  enzymeProviderInterfaceSchema,
   galxeInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
@@ -156,6 +160,9 @@ export const dataProvidersAPIEndpoints = {
   },
   EnsSubdomainProvider: {
     getEnsSubdomainsCount: async (_: any) => new EnsSubdomainProvider().getEnsSubdomainsCount(_),
+  },
+  EnzymeProvider: {
+    getVaultDepositorsCount: async (_: any) => new EnzymeProvider().getVaultDepositorsCount(_),
   },
   EthereumAttestationServiceProvider: {
     getAttestationRecipients: async (_: any) =>
